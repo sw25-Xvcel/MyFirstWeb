@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>Utopia - Tracklist</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Цомгийн хуудсанд зориулсан загвар */
+        .track-list {
+            max-width: 700px;
+            margin: 30px auto;
+            text-align: left;
+            background: #121212;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+        .track-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 10px;
+            border-bottom: 1px solid #222;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .track-item:hover {
+            background: #1db95422; /* Spotify ногоон туяа */
+            border-radius: 8px;
+        }
+        .track-num { 
+            color: #c5a059; /* Travis-ийн алтлаг бор өнгө */
+            width: 40px;
+            font-weight: bold;
+        }
+        .track-name {
+            flex: 1;
+            font-weight: 500;
+        }
+        .track-duration {
+            color: #777;
+            font-size: 14px;
+        }
+        .album-header {
+            text-align: center;
+            padding-top: 40px;
+        }
+        .album-header img {
+            width: 280px;
+            height: 280px;
+            border-radius: 10px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="albums.html">← Буцах</a>
+    </nav>
+
+    <div class="container">
+        <div class="album-header">
+            <img src="uto.jfif" alt="Utopia">
+            <h1 style="margin-top: 25px; color: #c5a059;">UTOPIA</h1>
+            <p style="color: #b3b3b3;">Travis Scott • 19 Дуу • 2023</p>
+        </div>
+
+        <div class="track-list">
+            <div class="track-item">
+                <span class="track-num">01</span>
+                <span class="track-name">HYAENA</span>
+                <span class="track-duration">3:42</span>
+            </div>
+            <div class="track-item">
+                <span class="track-num">02</span>
+                <span class="track-name">THANK GOD</span>
+                <span class="track-duration">3:04</span>
+            </div>
+            <div class="track-item">
+                <span class="track-num">03</span>
+                <span class="track-name">MODERN JAM (feat. Teezo Touchdown)</span>
+                <span class="track-duration">4:15</span>
+            </div>
+            <div class="track-item">
+                <span class="track-num">04</span>
+                <span class="track-name">MY EYES</span>
+                <span class="track-duration">4:11</span>
+            </div>
+            <div class="track-item">
+                <span class="track-num">05</span>
+                <span class="track-name">FE!N (feat. Playboi Carti)</span>
+                <span class="track-duration">3:11</span>
+            </div>
+            <div class="track-item">
+                <span class="track-num">06</span>
+                <span class="track-name">CIRCUS MAXIMUS</span>
+                <span class="track-duration">4:18</span>
+            </div>
+            <div class="track-item">
+                <span class="track-num">07</span>
+                <span class="track-name">TELEKINESIS (feat. SZA & Future)</span>
+                <span class="track-duration">5:53</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

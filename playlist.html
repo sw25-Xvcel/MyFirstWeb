@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <nav class="main-nav">
+        <a href="home.html">Нүүр</a>
+        <a href="artists.html">Уран бүтээлчид</a>
+        <a href="albums.html">Цомгууд</a>
+        <a href="genres.html">Урсгал</a>
+        <a href="events.html">Эвент</a>
+        <a href="news.html">Мэдээ</a>
+        <a href="charts.html" class="active">Чартууд</a>
+        <a href="playlist.html">Жагсаалт</a>
+        <a href="about.html">Бидний тухай</a>
+        <a href="contact.html">Холбоо барих</a>
+        <a href="index.html" style="color: red;">Гарах</a>
+    </nav>
+  <div class="container">
+    <h1>Миний Playlist</h1>
+    
+    <div class="playlist-list" style="max-width: 800px; margin: auto;">
+        
+        <div class="chart-item">
+            <img src="star.jfif" alt="Cover">
+            <div class="song-info">
+                <h3>Starboy</h3>
+                <p>The Weeknd</p>
+            </div>
+            <audio controls>
+                <source src="starboy.mp3" type="audio/mp3">
+            </audio>
+        </div>
+
+        <div class="chart-item">
+            <img src="sick.jfif" alt="Cover">
+            <div class="song-info">
+                <h3>Sicko Mode</h3>
+                <p>Travis Scott</p>
+            </div>
+            <audio controls>
+                <source src="sicko.mp3" type="audio/mp3">
+            </audio>
+        </div>
+
+        <div class="chart-item">
+            <img src="gods.jfif" alt="Cover">
+            <div class="song-info">
+                <h3>God's Plan</h3>
+                <p>Drake</p>
+            </div>
+            <audio controls>
+                <source src="Drake - God's Plan.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div class="chart-item">
+            <img src="anti.jfif" alt="Cover">
+            <div class="song-info">
+                <h3>Anti-Hero</h3>
+                <p>Taylor Swift</p>
+            </div>
+            <audio controls>
+                <source src="Abti-hero.mp3" type="audio/mp3">
+            </audio>
+        </div>
+
+        <div class="chart-item">
+            <img src="BLIND.jfif" alt="Cover">
+            <div class="song-info">
+                <h3>Blinding Lights</h3>
+                <p>The Weeknd</p>
+            </div>
+            <audio controls>
+                <source src="blinding.mp3" type="audio/mp3">
+            </audio>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn-login" onclick="alert('API холболт хийгдээгүй байна.')">+ Дуу нэмэх</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,394 @@
+/* 1. Ерөнхий тохиргоо */
+:root {
+    --primary: #ff0050; /* Хөгжмийн вэб сайтын үндсэн өнгө */
+    --bg: #0b0b0b;
+    --card: #1a1a1a;
+    --text: #ffffff;
+    --gray: #b3b3b3;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* 2. Нэвтрэх хуудас (index.html) */
+.login-screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1000');
+    background-size: cover;
+    background-position: center;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 0, 80, 0.4);
+    text-align: center;
+    width: 320px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+.login-card input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.login-card input:focus {
+    border-color: var(--primary);
+}
+
+/* 3. Навигацийн цэс */
+.main-nav {
+    background: rgba(15, 15, 15, 0.98);
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--primary);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.main-nav a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    color: white;
+    background: rgba(255, 0, 80, 0.15);
+}
+
+.main-nav a.active {
+    color: white;
+    background: var(--primary);
+}
+
+/* 4. Layout болон Контент */
+.container {
+    padding: 50px 20px;
+    max-width: 1100px;
+    margin: auto;
+    min-height: 80vh;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Grid систем (Artists, Albums, Genres-д) */
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.music-card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #222;
+    transition: 0.3s ease;
+}
+
+.music-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-8px);
+    background: #222;
+}
+
+/* Жагсаалтын загвар (Charts-д) */
+ol {
+    max-width: 600px;
+    margin: auto;
+    padding: 0;
+    list-style: none;
+    counter-reset: my-counter;
+}
+
+ol li {
+    counter-increment: my-counter;
+    background: var(--card);
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid var(--primary);
+}
+
+ol li::before {
+    content: counter(my-counter);
+    font-weight: bold;
+    color: var(--primary);
+    margin-right: 20px;
+    font-size: 1.2rem;
+}
+
+/* Хүснэгтийн загвар (Events-д) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: var(--card);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #222;
+}
+
+th {
+    background: #222;
+    color: var(--primary);
+}
+
+/* 5. Товчлуур */
+.btn-login {
+    background: var(--primary);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+
+.btn-login:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 80, 0.4);
+    filter: brightness(1.2);
+}
+
+/* 6. Form (Contact-д) */
+textarea {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: white;
+    margin: 10px 0;
+    outline: none;
+    box-sizing: border-box;
+}
+/* Эвент картын зураг */
+.event-card {
+    position: relative; /* Огноог зургийн дээр гаргахын тулд */
+    text-align: left; /* Текстийг зүүн талд */
+}
+
+.event-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Зургийн дээрх огнооны тэмдэг */
+.event-date {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: var(--primary);
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.event-card h3 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.event-card p {
+    margin: 3px 0;
+}
+/* Мэдээний картын загвар */
+.news-card {
+    display: flex;
+    flex-direction: row; /* Зураг болон текст хажуу хажуудаа */
+    gap: 25px;
+    margin-bottom: 30px;
+    text-align: left;
+    align-items: center;
+}
+
+.news-card img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.news-content {
+    flex: 1;
+}
+
+.news-tag {
+    background: var(--primary);
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.news-card h3 {
+    margin: 15px 0 10px 0;
+    color: white;
+}
+
+.news-card p {
+    color: var(--gray);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Гар утсан дээр зураг дээрээ, текст доороо харагдах тохиргоо */
+@media (max-width: 768px) {
+    .news-card {
+        flex-direction: column;
+    }
+    .news-card img {
+        width: 100%;
+    }
+}
+/* Чартын жагсаалтын загвар */
+.charts-list {
+    max-width: 800px;
+    margin: auto;
+}
+
+.chart-item {
+    display: flex;
+    align-items: center;
+    background: var(--card);
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    transition: 0.3s;
+    border: 1px solid #222;
+}
+
+.chart-item:hover {
+    background: #252525;
+    border-color: var(--primary);
+    transform: scale(1.02);
+}
+
+.rank {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary);
+    width: 40px;
+}
+
+.chart-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.song-info {
+    flex: 1;
+    text-align: left;
+}
+
+.song-info h3 {
+    margin: 0;
+    font-size: 16px;
+    color: white;
+}
+
+.song-info p {
+    margin: 5px 0 0 0;
+    font-size: 13px;
+    color: var(--gray);
+}
+
+/* Аудио тоглуулагчийг жижигсгэх */
+.chart-item audio {
+    height: 35px;
+    width: 200px;
+    filter: invert(1);
+    opacity: 0.7;
+}
+
+.chart-item audio:hover {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .chart-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .chart-item audio {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .song-info {
+        margin-bottom: 10px;
+    }
+}
+.track-row:hover {
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+th {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}

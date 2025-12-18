@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Music Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <a href="home.html" class="active">Нүүр</a>
+        <a href="artists.html">Уран бүтээлчид</a>
+        <a href="albums.html">Цомгууд</a>
+        <a href="genres.html">Урсгал</a>
+        <a href="events.html">Эвент</a>
+        <a href="news.html">Мэдээ</a>
+        <a href="charts.html">Чартууд</a>
+        <a href="playlist.html">Миний жагсаалт</a>
+        <a href="about.html">Бидний тухай</a>
+        <a href="contact.html">Холбоо барих</a>
+        <a href="index.html" style="color: red;">Гарах</a>
+    </nav>
+
+    <div class="container">
+        <h1>Тавтай морилно уу!</h1>
+        
+        <div class="music-card" style="margin-top: 30px; padding: 50px; position: relative; overflow: hidden;">
+            <div id="visualizer" style="display: none; margin-bottom: 20px;">🎵 Хөгжим тоглож байна...</div>
+
+            <h2>Өнөөдрийн онцлох дуу: "Happy nation"</h2>
+            <p>Сонссон тоо: 228 сая</p>
+            
+            <audio id="main-track">
+                <source src="happy.mp3" type="audio/mp3">
+                Таны хөтөч аудиог дэмжихгүй байна.
+            </audio>
+
+            <button class="btn-login" id="play-btn" onclick="togglePlay()">Одоо тоглуулах</button>
+            
+            <br><br>
+            <div id="audio-controls" style="display: none;">
+                <p style="color: #ff0050; font-size: 12px;">Удирдах хэсэг:</p>
+                <audio controls style="width: 80%; filter: invert(1);">
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePlay() {
+            const audio = document.getElementById('main-track');
+            const btn = document.getElementById('play-btn');
+            const controls = document.getElementById('audio-controls');
+            const visualizer = document.getElementById('visualizer');
+
+            if (audio.paused) {
+                audio.play();
+                btn.innerText = "Түр зогсоох";
+                btn.style.background = "#555"; // Өнгийг нь өөрчлөх
+                controls.style.display = "block";
+                visualizer.style.display = "block";
+            } else {
+                audio.pause();
+                btn.innerText = "Одоо тоглуулах";
+                btn.style.background = "#ff0050";
+                visualizer.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

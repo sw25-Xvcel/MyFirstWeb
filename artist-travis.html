@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>Travis Scott - Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Travis-ийн хуудсанд зориулсан загвар */
+        .profile-container {
+            display: flex;
+            gap: 30px;
+            background: #151515; /* Бага зэрэг бараан суурь */
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #c5a059; /* Трависын имиж болох бор/алтлаг хүрээ */
+            max-width: 800px;
+            margin: 40px auto;
+            text-align: left;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .profile-img {
+            width: 300px;
+            height: 380px; /* Трависын зурагт зориулж бага зэрэг урт болгов */
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-info h1 {
+            text-align: left;
+            margin-top: 0;
+            font-size: 32px;
+            color: #c5a059; /* Нэрний өнгийг өөрчлөв */
+        }
+
+        .profile-info p {
+            margin: 12px 0;
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        .album-tag {
+            background: #333;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 700px) {
+            .profile-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .profile-info h1 { text-align: center; }
+            .profile-img { width: 100%; height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <a href="artists.html">← Буцах</a>
+    </nav>
+
+    <div class="container">
+        <div class="profile-container">
+            <img src="travis.jfif" alt="Travis Scott" class="profile-img">
+
+            <div class="profile-info">
+                <h1>Travis Scott</h1>
+                <p><strong>Төрөл:</strong> Hip Hop, Trap, Psychedelic</p>
+                <p><strong>Намтар:</strong> Jacques Bermon Webster II буюу Travis Scott нь Америкийн реппер, продюсер юм. Тэрээр өөрийн гэсэн өвөрмөц "Трап" хөгжмийн урсгал болон эрч хүчтэй тоглолтуудаараа дэлхийд алдартай.</p>
+                
+                <p><strong>Гол цомгууд:</strong></p>
+                <div style="margin-bottom: 20px;">
+                    <span class="album-tag">ASTROWORLD</span>
+                    <span class="album-tag">UTOPIA</span>
+                    <span class="album-tag">Rodeo</span>
+                </div>
+
+                <p><strong>Шилдэг дуунууд:</strong></p>
+                <ul style="color: #b3b3b3; font-size: 14px; padding-left: 20px;">
+                    <li>Sicko Mode (2018)</li>
+                    <li>Goosebumps (2016)</li>
+                    <li>FE!N (2023)</li>
+                </ul>
+                <br>
+                <a href="artists.html" class="btn-login" style="padding: 10px 20px; background: #c5a059;">Жагсаалт руу буцах</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

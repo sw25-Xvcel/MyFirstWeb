@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <title>Холбоо барих</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+      <nav class="main-nav">
+        <a href="home.html" class="active">Нүүр</a>
+        <a href="artists.html">Уран бүтээлчид</a>
+        <a href="albums.html">Цомгууд</a>
+        <a href="genres.html">Урсгал</a>
+        <a href="events.html">Эвент</a>
+        <a href="news.html">Мэдээ</a>
+        <a href="charts.html">Чартууд</a>
+        <a href="playlist.html">Миний жагсаалт</a>
+        <a href="about.html">Бидний тухай</a>
+        <a href="contact.html">Холбоо барих</a>
+        <a href="index.html" style="color: red;">Гарах</a>
+    </nav>
+
+    <div class="container">
+        <h1>Холбоо барих</h1>
+        
+        <div class="login-card" style="margin: auto; width: 100%; max-width: 400px;">
+            <p id="msg" style="color: #28a745; display: none; font-weight: bold;">
+                Амжилттай илгээгдлээ!
+            </p>
+
+            <input type="text" id="user" placeholder="Таны нэр">
+            <textarea id="txt" style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; box-sizing: border-box;" rows="5" placeholder="Таны мессеж"></textarea>
+            
+            <button class="btn-login" onclick="check()">Илгээх</button>
+        </div>
+    </div>
+
+    <script>
+        function check() {
+            // 1. Утгуудыг авна
+            var нэр = document.getElementById('user').value;
+            var мессеж = document.getElementById('txt').value;
+            var мэдэгдэл = document.getElementById('msg');
+
+            // 2. Хоосон байгааг шалгана
+            if (нэр == "" || мессеж == "") {
+                alert("Бүгдийг бөглөнө үү!");
+            } else {
+                // 3. Амжилттай бол мэдэгдлийг харуулна
+                мэдэгдэл.style.display = 'block';
+                
+                // 4. Талбаруудыг цэвэрлэнэ
+                document.getElementById('user').value = "";
+                document.getElementById('txt').value = "";
+            }
+        }
+    </script>
+
+</body>
+</html>
